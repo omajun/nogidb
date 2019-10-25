@@ -1,0 +1,9 @@
+{% extends 'nogidb/base.html' %}
+
+{% block  title %}ホーム{% endblock %}
+
+{% block content %}
+   <h1> <a href={% url 'nogidb:member_list' %}>メンバーリスト</a></h1>
+   <h1> <a href=''>学年別リスト</a></h1>
+    <a href='admin/'>管理画面</a>
+{% endblock %}

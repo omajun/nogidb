@@ -1,0 +1,24 @@
+{% extends 'nogidb/base.html' %}
+
+{% block  title %}{{ member.name }}{% endblock %}
+
+{% block content %}
+   <h1> <a href=''>{{ member.name }}</a></h1>
+   {% if images %}
+     {% for image in images %}
+       <img src='{{ MEDIA_URL }}{{ image.picture }}' alt={{ member.name }} width=250>
+     {% endfor %}
+   {% else %}
+       <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=250>
+   {% endif %}
+
+
+   <h3>誕生日</h3>{{ member.birthday }}
+   <h3>年齢</h3>blank
+   <h3>クラス</h3>{{ member.join_class_display }}
+   <h3>活動状況</h3>{{ member.status_display }}
+
+
+
+
+{% endblock %}
