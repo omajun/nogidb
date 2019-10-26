@@ -34,6 +34,9 @@ class Member(models.Model):
 
     status = models.PositiveIntegerField('活動状況', choices=STATUS_CHOICES)
 
+    picture = models.ImageField(verbose_name='メンバー画像', null=True, upload_to='images/')
+
+
 
     def __str__(self):
         return self.name

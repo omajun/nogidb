@@ -1,0 +1,19 @@
+{% extends 'nogidb/base.html' %}
+
+
+{% block title %}学年別リスト{% endblock %}
+
+{% block content %}
+<h1>学年別リスト</h1>
+    {% for member in members %}
+    <div>
+        {% if member.picture %}
+        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% else %}
+        <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
+        {% endif %}
+        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+    </div>
+    {% endfor %}
+
+{% endblock %}

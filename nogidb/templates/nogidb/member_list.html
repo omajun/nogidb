@@ -24,7 +24,7 @@
     {# 一覧用 #}
     {% for member in members %}
       <tr>
-        <td><a href="{% url 'album:detail' member.id %}">{{ member.name }}</a></td>
+        <td><a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a></td>
         <td>{{ member.birthday }}</td>
         <span><td>{{ member.join_class_display }}</td></span>
         <span><td>{{ member.status_display }}</td></span>
