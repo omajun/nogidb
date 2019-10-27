@@ -8,4 +8,5 @@ urlpatterns = [
     path('list/<int:condition>/', views.condition, name='condition'),
     path('detail/<int:member_id>/', views.member_detail, name='detail'),
     path('grade/', views.grade, name='grade'),
+    path('grade/<int:status>/', views.grade_condition, name='grade_condition')
 ]
