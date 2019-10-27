@@ -2,6 +2,7 @@ from django.db import models
 from django.core import validators
 
 from datetime import date, timedelta
+import pandas as pd
 
 
 class Member(models.Model):
@@ -49,13 +50,11 @@ class Member(models.Model):
 
     def join_class_display(self):
         return '{}期生'.format(self.join_class)
-
-    """
+    
     def age(self):
-        today = date.today()
-        birthday = self.birthday
-        return 
-    """
+        today    = int(pd.to_datetime('today').strftime('%Y%m%d'))
+        birthday = int(self.birthday.strftime('%Y%m%d'))
+        return int((today - birthday) / 10000)
 
     
     class Meta:
