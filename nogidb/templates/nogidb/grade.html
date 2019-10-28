@@ -12,8 +12,8 @@
 <h3>1990年生まれ（29歳）</h3>
     {% for member in members_1990 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -24,8 +24,8 @@
     <h3>1991年生まれ（28歳）</h3>
     {% for member in members_1991 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -36,8 +36,8 @@
     <h3>1992年生まれ（27歳）</h3>
     {% for member in members_1992 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -48,8 +48,8 @@
     <h3>1993年生まれ（26歳）</h3>
     {% for member in members_1993 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -60,8 +60,8 @@
     <h3>1994年生まれ（25歳）</h3>
     {% for member in members_1994 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -72,8 +72,8 @@
     <h3>1995年生まれ（24歳）</h3>
     {% for member in members_1995 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -84,8 +84,8 @@
     <h3>1996年生まれ（23歳）</h3>
     {% for member in members_1996 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -96,8 +96,8 @@
     <h3>1997年生まれ（22歳）</h3>
     {% for member in members_1997 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -108,8 +108,8 @@
     <h3>1998年生まれ（21歳）</h3>
     {% for member in members_1998 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -120,8 +120,8 @@
     <h3>1999年生まれ（20歳）</h3>
     {% for member in members_1999 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -132,8 +132,8 @@
     <h3>2000年生まれ（19歳）</h3>
     {% for member in members_2000 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -144,8 +144,8 @@
     <h3>2001年生まれ（18歳）</h3>
     {% for member in members_2001 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -156,8 +156,8 @@
     <h3>2002年生まれ（17歳）</h3>
     {% for member in members_2002 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -168,8 +168,8 @@
     <h3>2003年生まれ（16歳）</h3>
     {% for member in members_2003 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
@@ -180,8 +180,8 @@
     <h3>2004年生まれ（15歳）</h3>
     {% for member in members_2004 %}
     <div>
-        {% if member.picture %}
-        <img src='{{ MEDIA_URL }}{{ member.picture }}' alt={{ member.name }} width=50>
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}

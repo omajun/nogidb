@@ -1,5 +1,7 @@
 from django.db import models
 from django.core import validators
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 from datetime import date, timedelta
 import pandas as pd
@@ -36,6 +38,8 @@ class Member(models.Model):
     status = models.PositiveIntegerField('活動状況', choices=STATUS_CHOICES)
 
     picture = models.ImageField(verbose_name='メンバー画像', null=True, upload_to='images/')
+
+    thumbnail = ImageSpecField(source='picture', processors=[ResizeToFill(250,330)], format='JPEG')
 
 
 
