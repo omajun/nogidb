@@ -1,7 +1,11 @@
 {% extends 'nogidb/base.html' %}
-
+{% load staticfiles %}
 
 {% block title %}メンバーリスト{% endblock %}
+
+{% block style %}
+<link href={% static 'css/member_list.css' %} rel="stylesheet" type="text/css" />
+{% endblock %}
 
 {% block content %}
   <h1>メンバーリスト</h1>

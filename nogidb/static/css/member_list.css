@@ -1,0 +1,67 @@
+body {
+    color: #333;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 6px 6px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+table > tbody > tr {
+    height: 52px;
+    border-bottom: solid 1px #f6fafa;
+}
+
+table > tbody > tr:nth-child(even) {
+    background-color: #f9fcff;
+}
+
+
+th {
+    padding: 8px;
+    color: white;
+    background-color: #6d17f7a1;
+}
+
+td {
+    padding: 4px 8px;
+}
+
+span {
+    margin: 0 auto;
+}
+
+label {
+    font-weight: 600;
+}
+
+form > ul > li {
+    list-style: none;
+    margin: 8px 0;
+}
+
+form > ul > li > label {
+    margin-right: 8px;
+}
+
+form > ul > li:not(:first-child) {
+    border-top: solid 1px #eee;
+    padding-top: 8px;
+}
+
+input:not([type="submit"]), textarea {
+    border-radius: 2px;
+    border: solid 1px #bbb;
+    padding: 4px;
+}
+
+h1 {
+    font-family: 'Nico Moji','M PLUS Rounded 1c', sans-serif;
+    font-size: 38px;
+    padding-bottom: 8px;
+    margin: 38px 0;
+}

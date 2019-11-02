@@ -1,6 +1,11 @@
 {% extends 'nogidb/base.html' %}
+{% load staticfiles %}
 
 {% block  title %}{{ member.name }}{% endblock %}
+
+{% block style %}
+<link href={% static 'css/detail.css' %} rel="stylesheet" type="text/css" />
+{% endblock %}
 
 {% block content %}
    <h1> <a href=''>{{ member.name }}</a></h1>

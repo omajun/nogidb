@@ -48,8 +48,10 @@ def grade(request):
     members_2003 = models.Member.objects.filter(birthday__range=["2003-04-02", "2004-04-01"]).order_by('birthday')
     members_2004 = models.Member.objects.filter(birthday__range=["2004-04-02", "2005-04-01"]).order_by('birthday')
 
-    return TemplateResponse(request, 'nogidb/grade.html',
-    {
+    return TemplateResponse(
+        request,
+        'nogidb/grade.html',
+        {
         'members_1990': members_1990,
         'members_1991': members_1991,
         'members_1992': members_1992,
@@ -65,7 +67,8 @@ def grade(request):
         'members_2002': members_2002,
         'members_2003': members_2003,
         'members_2004': members_2004,
-        })
+        }
+        )
 
 def grade_condition(request, status):
     if status == 0:
@@ -103,6 +106,7 @@ def grade_condition(request, status):
         members_2002 = members.filter(birthday__range=["2002-04-02", "2003-04-01"]).order_by('birthday')
         members_2003 = members.filter(birthday__range=["2003-04-02", "2004-04-01"]).order_by('birthday')
         members_2004 = members.filter(birthday__range=["2004-04-02", "2005-04-01"]).order_by('birthday')
+
     
     return TemplateResponse(request, 'nogidb/grade.html',
     {

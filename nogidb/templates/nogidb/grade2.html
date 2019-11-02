@@ -1,0 +1,32 @@
+{% extends 'nogidb/base.html' %}
+{% load staticfiles %}
+
+{% block title %}学年別リスト{% endblock %}
+
+{% block style %}
+<link href={% static 'css/grade.css' %} rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<h1>学年別リスト</h1>
+<th><a href={% url 'nogidb:grade_condition' 0 %} >活動中のみ</a></th>
+<th><a href={% url 'nogidb:grade_condition' 1 %} >卒業生のみ</a></th>
+<th><a href={% url 'nogidb:grade' %} >すべて</a></th>
+
+{% for key, value in members %}
+<h3>{{ key }}年生まれ</h3>
+    {% for member in value %}
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
+        {% if member.thumbnail %}
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
+        {% else %}
+        <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
+        {% endif %}
+        <h4>{{ member.name }}</h4>
+        </a>        
+    </div>
+    {% endfor %}
+{% endfor %}
+
+{% endblock %}

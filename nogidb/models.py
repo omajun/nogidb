@@ -3,7 +3,6 @@ from django.core import validators
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
-from datetime import date, timedelta
 import pandas as pd
 
 

@@ -1,9 +1,13 @@
 {% extends 'nogidb/base.html' %}
+{% load staticfiles %}
 
 {% block  title %}ホーム{% endblock %}
 
+{% block style %}
+<link href={% static 'css/home.css' %} rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block content %}
-   <h1> <a href={% url 'nogidb:member_list' %}>メンバーリスト</a></h1>
+   <h1 id='top'> <a href={% url 'nogidb:member_list' %}>メンバーリスト</a></h1>
    <h1> <a href={% url 'nogidb:grade' %}>学年別リスト</a></h1>
-    <a href='admin/'>管理画面</a>
 {% endblock %}

@@ -1,0 +1,11 @@
+h1 {
+    background-color: #cb69df2d;
+    width: 300px;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+#top {
+    margin-top: 60px;
+}

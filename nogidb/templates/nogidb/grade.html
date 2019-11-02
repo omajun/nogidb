@@ -1,7 +1,12 @@
 {% extends 'nogidb/base.html' %}
+{% load staticfiles %}
 
 
 {% block title %}学年別リスト{% endblock %}
+
+{% block style %}
+<link href={% static 'css/grade.css' %} rel="stylesheet" type="text/css" />
+{% endblock %}
 
 {% block content %}
 <h1>学年別リスト</h1>
@@ -9,183 +14,216 @@
 <th><a href={% url 'nogidb:grade_condition' 1 %} >卒業生のみ</a></th>
 <th><a href={% url 'nogidb:grade' %} >すべて</a></th>
 
-<h3>1990年生まれ（29歳）</h3>
+
+<h3>1990年度生まれ（29歳）</h3>
     {% for member in members_1990 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
         <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>1991年生まれ（28歳）</h3>
+
+    <h3>1991年度生まれ（28歳）</h3>
     {% for member in members_1991 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>1992年生まれ（27歳）</h3>
+    <h3>1992年度生まれ（27歳）</h3>
     {% for member in members_1992 %}
-    <div>
+    <a href="{% url 'nogidb:detail' member.id %}">
+
+    <div class='grade'>
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>1993年生まれ（26歳）</h3>
+    <h3>1993年度生まれ（26歳）</h3>
     {% for member in members_1993 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>1994年生まれ（25歳）</h3>
+    <h3>1994年度生まれ（25歳）</h3>
     {% for member in members_1994 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>1995年生まれ（24歳）</h3>
+    <h3>1995年度生まれ（24歳）</h3>
     {% for member in members_1995 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>1996年生まれ（23歳）</h3>
+    <h3>1996年度生まれ（23歳）</h3>
     {% for member in members_1996 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>1997年生まれ（22歳）</h3>
+    <h3>1997年度生まれ（22歳）</h3>
     {% for member in members_1997 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>1998年生まれ（21歳）</h3>
+    <h3>1998年度生まれ（21歳）</h3>
     {% for member in members_1998 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>1999年生まれ（20歳）</h3>
+    <h3>1999年度生まれ（20歳）</h3>
     {% for member in members_1999 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>2000年生まれ（19歳）</h3>
+    <h3>2000年度生まれ（19歳）</h3>
     {% for member in members_2000 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>2001年生まれ（18歳）</h3>
+    <h3>2001年度生まれ（18歳）</h3>
     {% for member in members_2001 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>2002年生まれ（17歳）</h3>
+    <h3>2002年度生まれ（17歳）</h3>
     {% for member in members_2002 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>2003年生まれ（16歳）</h3>
+    <h3>2003年度生まれ（16歳）</h3>
     {% for member in members_2003 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
-    <h3>2004年生まれ（15歳）</h3>
+    <h3>2004年度生まれ（15歳）</h3>
     {% for member in members_2004 %}
-    <div>
+    <div class='grade'>
+        <a href="{% url 'nogidb:detail' member.id %}">
         {% if member.thumbnail %}
-        <img src='{{ member.thumbnail }}' alt={{ member.name }} width=50>
+        <img src='{{ member.thumbnail.url }}' alt={{ member.name }} width=50>
         {% else %}
         <img src='{{ MEDIA_URL }}images/dorayakiman.png' alt='画像はありません' width=50>
         {% endif %}
-        <a href="{% url 'nogidb:detail' member.id %}">{{ member.name }}</a>        
+        <h4>{{ member.name }}</h4>
+        </a>        
     </div>
     {% endfor %}
 
