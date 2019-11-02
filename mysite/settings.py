@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,50 +23,11 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z(isj43if!k&d&24#c&^%v!_o_=z65x+t02r#r_fmq=jl2&97r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-from socket import gethostname
-hostname = gethostname()
+DEBUG = False
 
-if "oma_j" in hostname:
-    # デバッグ環境
-    DEBUG = True
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-    ALLOWED_HOSTS = [] # よくわからんけど、これも大事らしい
-
-else:
-    DEBUG = False
-    LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'handlers': {
-            'console': {
-                'class': 'logging.StreamHandler',
-            },
-        },
-        'loggers': {
-            'django': {
-                'handlers': ['console'],
-                'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-            },
-        },
-    }
-
-     # DB設定
-    import dj_database_url
-    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-    db_from_env = dj_database_url.config()
-    DATABASES = {
-        'default': dj_database_url.config()
-    }
-
-    ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'nogidb.apps.NogidbConfig',
     'album.apps.AlbumConfig',
+    'mysite'
 ]
 
 MIDDLEWARE = [
@@ -117,11 +81,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 
-import dj_database_url
 
-db_from_env = dj_database_url.config()
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', #sqlite3から変更
+        'NAME': 'name',
+        'USER': 'user',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    } 
 }
 
 
@@ -163,3 +132,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+if not DEBUG:
+    SECRET_KEY = os.environ['SECRET_KEY']
+    import django_heroku
+    django_heroku.settings(locals())
+
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'].update(db_from_env)
