@@ -13,7 +13,7 @@ MEDIA_URL = '/media/'
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -128,7 +128,7 @@ try:
 except ImportError:
     pass
 
-if not DEBUG:
+if DEBUG:
     SECRET_KEY = os.environ['SECRET_KEY']
 
     AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
