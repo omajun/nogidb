@@ -137,7 +137,7 @@ if not DEBUG:
 
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     S3_URL = 'http://nogidb.s3.amazonaws.com/'
-    MEDIA_URL = S3_URL + 'media/'
+    MEDIA_URL = S3_URL
 
     AWS_S3_FILE_OVERWRITE = False
     AWS_DEFAULT_ACL = None
