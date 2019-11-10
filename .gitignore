@@ -4,6 +4,7 @@ __pycache__
 nogivenv
 db.sqlite3
 /static
+/media
 .DS_Store
 .vscode
 local_settings.py
