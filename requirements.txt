@@ -20,7 +20,7 @@ mccabe==0.6.1
 numpy==1.17.3
 pandas==0.25.2
 pilkit==2.0
-Pillow==6.2.1
+Pillow==8.2.0
 psycopg2==2.8.4
 pylint==2.4.3
 pypi==2.1
